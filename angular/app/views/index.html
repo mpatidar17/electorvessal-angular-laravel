@@ -1,0 +1,200 @@
+<!-- <script>
+if(sessionStorage.getItem("user_login") != "true"){
+   window.location = 'login.html';
+}
+</script>
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Electrovessal</title>
+
+    <!-- Styles -->
+    <link href="/app/assets/css/style.default.css" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="/app/assets/js/app.js"></script>
+    <script src="/app/assets/js/jquery-1.11.1.min.js"></script>
+    <script src="/app/assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="/app/assets/js/jquery-ui-1.10.3.min.js"></script>
+    <script src="/app/assets/js/bootstrap.min.js"></script>
+    <script src="/app/assets/js/jquery.sparkline.min.js"></script>
+    <script src="/app/assets/js/toggles.min.js"></script>
+    <script src="/app/assets/js/jquery.cookies.js"></script>
+    <link rel="stylesheet" href="/app/bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="/app/bower_components/html5-boilerplate/dist/css/main.css">
+    <!-- <link rel="stylesheet" href="app.css"> -->
+    <script src="/app/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+    
+</head>
+<body ng-app="cargo" custom>
+  <section>
+
+    <div class="leftpanel">
+       <div class="logopanel">
+          <h1>Electrovessel</h1>
+          <img src="/app/assets/images/close-icon.jpg" class="close-icon pull-right menutoggle">
+       </div>
+       <!-- logopanel -->
+       <div class="leftpanelinner">
+          <!-- This is only visible to small devices -->
+          <div class="">
+             <div class="media userlogged">
+                <img alt="" src="/app/assets/images/default-logo.png" class="">
+                <div class="media-body">
+                   <h4>Welcome back <v id="user_firstName"></v></h4>
+                   <span>Last login: 01:12 am 03/25/2017</span>
+                </div>
+             </div>
+
+             <ul class="nav nav-pills nav-stacked nav-bracket mb30">
+                <li><a href="/app/views/#!/dashboard"><span>Dashboard</span></a></li>
+                <li><a href="#"><span>Cargo</span></a></li>
+                <li><a href="#"><span>Cargo Document</span></a></li>
+                <li><a href="/app/views/#!/cargoTagGroups"><span>Cargo Tag Group</span></a></li>
+                <li><a href="#"><span>Cargo Text Tag</span></a></li>
+                <li><a href="#"><span>Cargoe Tag Value</span></a></li>
+                <li><a href="/app/views/#!/storagelocations"><span>Storage Location</span></a></li>
+                <li><a href="/app/views/#!/agents"><span>Agent</span></a></li>
+                <li><a href="/app/views/#!/customers"><span>Customer</span></a></li>
+
+                <li><a href="/app/views/#!/subscriptions"><span>Subscription</span></a></li>
+                <li><a href="/app/views/#!/invoices"><span>Invoice</span></a></li>
+                <li><a href="/app/views/#!/invoiceItems"><span>Invoice Item</span></a></li>
+                <li><a href="#"><span>Setting </span></a></li>
+                <li>
+                   <a href="javascript:void(0)" onclick="logout()" id="logout_button">
+                       <span >Log Out</span>
+                   </a>
+                </li>
+             </ul>
+          </div>
+       </div>
+       <!-- leftpanelinner -->
+    </div>
+    <!-- leftpanel -->        
+
+    <div class="headerbar">
+      <a class="menutoggle bar-icon"><i class="fa fa-bars"></i>
+      Electrovessal</a>
+      <div class="header-right">
+         <ul class="headermenu">
+            <li>
+               <input type="text" class="form-control search-box-top " name="keyword" placeholder="Search here..." />
+            </li>
+            <li>
+               <button id="chatview" class="btn btn-default tp-icon chat-icon">
+               <i class="glyphicon glyphicon-bell"></i>
+               </button>
+            </li>
+         </ul>
+      </div>
+      <!-- header-right -->
+    </div>            
+    <!-- headerbar -->
+
+    <div ng-view></div>
+
+    <div class="rightpanel">
+       <!-- Nav tabs -->
+       <ul class="nav nav-tabs nav-justified">
+          <li class="active"><a href="javascript:void(0)" data-toggle="tab"><img src="/app/assets/images/close-icon.jpg" class="chat-icon notification_icon" width="20"></a></li>
+       </ul>
+       <!-- Tab panes -->
+       <div class="tab-content">
+          <div class="tab-pane active" id="rp-alluser">
+             <h5 class="sidebartitle">Online Users</h5>
+             <ul class="chatuserlist">
+                <li class="online">
+                   <div class="media">
+                      <a href="#" class="pull-left media-thumb">
+                      <img alt="" src="/app/assets/images/pic.png" class="media-object">
+                      </a>
+                      <div class="media-body">
+                         <strong>Eileen Sideways</strong>
+                         <small>Los Angeles, CA</small>
+                      </div>
+                   </div>
+                   <!-- media -->
+                </li>
+                <li class="online">
+                   <div class="media">
+                      <a href="#" class="pull-left media-thumb">
+                      <img alt="" src="/app/assets/images/pic.png" class="media-object">
+                      </a>
+                      <div class="media-body">
+                         <span class="pull-right badge badge-danger">2</span>
+                         <strong>Zaham Sindilmaca</strong>
+                         <small>San Francisco, CA</small>
+                      </div>
+                   </div>
+                   <!-- media -->
+                </li>
+                <li class="online">
+                   <div class="media">
+                      <a href="#" class="pull-left media-thumb">
+                      <img alt="" src="/app/assets/images/pic.png" class="media-object">
+                      </a>
+                      <div class="media-body">
+                         <strong>Nusja Nawancali</strong>
+                         <small>Bangkok, Thailand</small>
+                      </div>
+                   </div>
+                   <!-- media -->
+                </li>
+                <li class="online">
+                   <div class="media">
+                      <a href="#" class="pull-left media-thumb">
+                      <img alt="" src="/app/assets/images/pic.png" class="media-object">
+                      </a>
+                      <div class="media-body">
+                         <strong>Renov Leongal</strong>
+                         <small>Cebu City, Philippines</small>
+                      </div>
+                   </div>
+                   <!-- media -->
+                </li>
+                <li class="online">
+                   <div class="media">
+                      <a href="#" class="pull-left media-thumb">
+                      <img alt="" src="/app/assets/images/pic.png" class="media-object">
+                      </a>
+                      <div class="media-body">
+                         <strong>Weno Carasbong</strong>
+                         <small>Tokyo, Japan</small>
+                      </div>
+                   </div>
+                   <!-- media -->
+                </li>
+             </ul>
+          </div>
+       </div>
+       <!-- tab-content -->
+    </div>
+    <!-- rightpanel -->
+  </section>
+
+<script src="/app/assets/js/custom.js"></script>
+
+<script src="/app/bower_components/angular/angular.js"></script>
+<script src="/app/bower_components/angular-route/angular-route.js"></script>
+<script src="/app/app.js"></script>
+<!-- <script src="view1/view1.js"></script>
+<script src="view2/view2.js"></script> -->
+<script src="/app/assets/js/routes.js"></script>
+<script src="/app/assets/js/agentController.js"></script>
+<script src="/app/assets/js/customerController.js"></script>
+<script src="/app/assets/js/subscriptionController.js"></script>
+<script src="/app/assets/js/invoiceController.js"></script>
+<script src="/app/assets/js/storageLocationController.js"></script>
+<script src="/app/assets/js/invoiceItemController.js"></script>
+<script src="/app/assets/js/cargoTagGroupController.js"></script>
+<script src="/app/components/version/version.js"></script>
+<script src="/app/components/version/version-directive.js"></script>
+<script src="/app/components/version/interpolate-filter.js"></script>
+</body>
+</html>

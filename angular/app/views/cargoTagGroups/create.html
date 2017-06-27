@@ -1,0 +1,58 @@
+<div class="mainpanel" ng-controller="createCargoTagGroupCtrl">
+  <!--content area start-->
+  <div id="content_area">
+      <div class="contentpanel" >
+            <div ng-if="validationErrors != ''">
+                <div class="alert alert-danger" ng-repeat="error in validationErrors">
+                  {{ error[0] }}
+                </div>
+            </div>
+            <div class="content-box">
+              <div ng-if="responseMessage != ''">
+              <div class="alert alert-success" id="response_message">{{ responseMessage }}</div>
+            </div>
+            <div class="row">
+                  <div class="col-lg-12 margin-tb">
+                      <div class="pull-left">
+                          <h2>Create New Cargo Tag Group</h2>
+                      </div>
+                      <div class="pull-right">
+                          <a class="btn btn-primary" href="/app/views/#!/cargoTagGroups"> Back</a>
+                      </div>
+                  </div>
+            </div>
+
+            <form name="createcargoTagGroupForm" ng-submit="createCargoTagGroup()"> 
+              <div class="row">
+                  
+                  <div class="col-xs-12 col-sm-12 col-md-12">
+                      <div class="form-group">
+                          <strong>Name:</strong>
+                         <input type="text" name="name" class="form-control" ng-model="formData.name" />
+                      </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-12 col-md-12">
+                      <div class="form-group">
+                          <strong>Description</strong>
+                         <textarea name="description" class="form-control" ng-model="formData.description"></textarea>
+                      </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-12 col-md-12">
+                      <div class="form-group">
+                          <strong>Order:</strong>
+                       <input type="text" name="order" class="form-control" ng-model="formData.order" />
+                      </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+
+              </div>
+            </form>
+            </div>
+          </div>
+      </div>
+    </div>

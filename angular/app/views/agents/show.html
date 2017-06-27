@@ -1,0 +1,82 @@
+<div class="mainpanel">
+  <!--content area start-->
+  <div id="content_area">
+      <div class="contentpanel" >
+            <div class="content-box">
+              
+              <!--start-->
+              <div class="contentpanel">
+               <div class="box1">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <div class="activities-tabs">
+                           <ul>
+                              <li><a href="/app/views/#!/agent/edit/{{ agentDetails.id }}"><img src="">Edit</a></li>
+
+                              <li><a class="" href="/app/views/#!/agents"><img src="">Back</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="content-box">
+                  <div class="row">
+                     <div class="col-sm-12 col-md-12">
+                        <div class="contentwrapper">
+                           <div class="content-container">
+                              <h1>View Agent</h1>
+                              <div class="form-box form-label">
+                                 <div class="row clear-box">
+                                    <div class="col-md-6">
+                                       <div class="form-group">
+                                          <label class="col-sm-2 clear-box control-label">First Name:</label>
+                                          <div class="col-sm-10">
+                                             {{ agentDetails.firstName }} 
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <div class="form-group">
+                                          <label class="col-sm-2 clear-box control-label">Middle Initial:</label>
+                                          <div class="col-sm-10">
+                                             {{ agentDetails.middleInitial }}
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="row clear-box">
+                                    <div class="col-md-6">
+                                       <div class="form-group">
+                                          <label class="col-sm-2 clear-box control-label">Last Name:</label>
+                                          <div class="col-sm-10">
+                                             {{ agentDetails.lastName }}
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <div class="form-group">
+                                          <label class="col-sm-2 clear-box control-label">Email:</label>
+                                          <div class="col-sm-10">
+                                              {{ agentDetails.email }}
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- row -->
+               </div>
+              </div>
+
+              <!--end  -->
+
+
+            </div>
+          </div>
+      </div>
+    </div>

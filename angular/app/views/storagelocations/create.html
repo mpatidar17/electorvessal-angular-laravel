@@ -1,0 +1,107 @@
+<div class="mainpanel" ng-controller="createStoragelocationCtrl">
+  <!--content area start-->
+  <div id="content_area">
+      <div class="contentpanel" >
+            <div ng-if="errors != ''">
+                <div class="alert alert-danger" ng-repeat="error in validationErrors">
+                  {{ error[0] }}
+                </div>
+            </div>
+            <div class="content-box">
+              <div ng-if="responseMessage != ''">
+              <div class="alert alert-success" id="response_message">{{ responseMessage }}</div>
+              </div>
+              <form name="createStoragelocationForm" ng-submit="createStoragelocation()">
+                <!--start-->
+                <div class="content-box">
+                  <div class="row">
+                     <div class="col-sm-12 col-md-12">
+                        <div class="contentwrapper">
+                           <div class="content-container">
+                              <h1>Create Storage Location</h1>
+                              <div class="form-box form-label">
+                                 <div class="row clear-box">
+                                    <div class="col-md-6">
+                                       <div class="form-group">
+                                          <label class="col-sm-2 clear-box control-label">Label:</label>
+                                          <div class="col-sm-10">
+                                            <input type="text" name="label" placeholder="Label" class="form-control" ng-model="formData.label" />
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <div class="form-group">
+                                          <label class="col-sm-2 clear-box control-label">Address 1:</label>
+                                          <div class="col-sm-10">
+                                            <input type="text" name="address1" placeholder="Rajwada" class="form-control" ng-model="formData.address1"/>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="row clear-box">
+                                    <div class="col-md-6">
+                                       <div class="form-group">
+                                          <label class="col-sm-2 clear-box control-label">Address 2:</label>
+                                          <div class="col-sm-10">
+                                            <input type="text" name="address2" placeholder="Palasia" class="form-control" ng-model="formData.address2"/>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <div class="form-group">
+                                          <label class="col-sm-2 clear-box control-label">City:</label>
+                                          <div class="col-sm-10">
+                                             <input type="text" name="city" placeholder="Indore" ng-model="formData.city" class="form-control" />
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="row clear-box">
+                                    <div class="col-md-6">
+                                       <div class="form-group">
+                                          <label class="col-sm-2 clear-box control-label">State:</label>
+                                          <div class="col-sm-10">
+                                             <input type="text" name="state" ng-model="formData.state" placeholder="MP" class="form-control" />
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                  <div class="row clear-box">
+                                    <div class="col-md-6">
+                                       <div class="form-group">
+                                          <label class="col-sm-2 clear-box control-label">Country:</label>
+                                          <div class="col-sm-10">
+                                             <input type="text"  placeholder="India" name="country" ng-model="formData.country" class="form-control" />
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                  <div class="row clear-box">
+                                    <div class="col-md-6">
+                                       <div class="form-group">
+                                          <label class="col-sm-2 clear-box control-label">Zip Code:</label>
+                                          <div class="col-sm-10">
+                                             <input type="text" placeholder="Zip Code" name="zipCode" ng-model="formData.zipCode" class="form-control" />
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- row -->
+
+                  <div class="top-section">
+                     <button type="submit" class="btn btn-primary-alt pull-right add-btn"><i class="fa fa-plus"></i>save</button>
+                     <a href="/app/views/#!/storagelocations" class="back_button btn btn-primary-alt pull-right add-btn">Cancel</a>
+                  </div>
+                </div>
+                <!--end  -->
+              </form>
+            </div>
+          </div>
+      </div>
+    </div>

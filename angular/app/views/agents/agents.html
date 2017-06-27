@@ -1,0 +1,100 @@
+<div class="mainpanel" ng-controller="getAgentList">
+  <!--content area start-->
+  <div id="content_area">
+      <div class="contentpanel" >
+            <div class="content-box">
+            <div ng-if="responseMessage != ''">
+              <div class="alert alert-success" id="response_message">{{ responseMessage }}</div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 col-md-12">
+                  <div class="contentwrapper">
+                    <div class="top-section">
+                      <a id="add_agent_button" href="/app/views/#!/agent/create" class="btn btn-primary-alt pull-right add-btn"><i class="fa fa-plus"></i>Add Agent</a>
+                    </div>
+                    <div class="content-container">
+                      <h1>Agents </h1>
+                      
+                      <br>
+                      <!--start of the filter container-->
+                      <!--end of the filter container-->
+
+                      <div class="clearfix"></div>
+                      <div class="table-responsive">
+                        <table class="table table-bordered filter-table table-hover">
+                          <thead>
+                            <tr>
+                              <th>ID &nbsp;&nbsp;<i class="fa fa-caret-down"></i></th>
+                              <th>Name</th>
+                              <th>Email</th>
+                              <th>Action</th>
+                            </tr>
+                          </thead>
+
+                          <!--list tbody start-->
+                          <tbody id="list_tbody" ng-repeat="agent in agents">
+                            <tr id="agent-{{ agent.id }}" ng-hide="(agentDeleted == agent.id)">
+                              <td>{{ agent.id }}</td>
+                              <td>{{ agent.firstName }}</td>
+                              <td>{{ agent.email }}</td>
+                              <td>
+                              <select ng-model="agentActions" ng-change="doAgentActions(agentActions,{{ agent.id }})" class="form-control">
+                                <option value="view">View</option>
+                                <option value="edit">Edit</option>
+                                <option value="delete">Delete</option>  
+                              </select>
+                              </td>
+                            </tr>
+                          </tbody>
+                          <!--list tbody end  -->
+
+                        </table>
+                      </div>
+                      <!-- table-responsive --> 
+                      <div class="clearfix"></div>
+                      <div class="row">
+                        <div class="col-md-2">
+                          <div class="form-group">
+                            <label class="col-sm-4 control-label show-label">Show</label>
+                            <div class="col-sm-8 clear-box">
+                              <!-- <input placeholder="Default Input" class="form-control" type="text"> -->
+                              <select class="form-control show-select">
+                                <option>20</option>
+                                <option>50</option>
+                                <option>100</option>
+                                <option>200</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-10">
+                          <ul class="pagination paginate">
+                            <li class="disabled"><a href="#"><i class="fa fa-caret-left" aria-hidden="true"></i>
+                              </a>
+                            </li>
+                            <li><a href="#">1</a></li>
+                            <li class="active"><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- col-sm-6 -->
+              </div>
+            </div>
+            <!-- row -->
+          </div>
+          <!-- contentpanel -->
+  </div>
+  <!-- contentpanel -->
+  <!--content area end  -->
+
+</div>
+<!-- mainpanel -->

@@ -1,0 +1,40 @@
+        <div class="logopanel">
+               <h1>Electrovessel</h1>
+               <img src="assets/images/close-icon.jpg" class="close-icon pull-right menutoggle">
+            </div>
+            <!-- logopanel -->
+            <div class="leftpanelinner">
+               <!-- This is only visible to small devices -->
+               <div class="">
+                  <div class="media userlogged">
+                     <img alt="" src="assets/images/default-logo.png" class="">
+                     <div class="media-body">
+                        <h4>Welcome back <v id="user_firstName"></v></h4>
+                        <span>Last login: 01:12 am 03/25/2017</span>
+                     </div>
+                  </div>
+
+                  <ul class="nav nav-pills nav-stacked nav-bracket mb30">
+                     <li><a href="{{ route('home') }}"><span>Dashboard</span></a></li>
+                     <li><a href="{{ route('cargo.index') }}"><span>Cargo</span></a></li>
+                     <li><a href="{{ route('cargoDocument.index') }}"><span>Cargo Document</span></a></li>
+                     <li><a href="{{ route('cargoTagGroup.index') }}"><span>Cargo Tag Group</span></a></li>
+                     <li><a href="{{ route('cargoTextTag.index') }}"><span>Cargo Text Tag</span></a></li>
+                     <li><a href="{{ route('cargoTagValue.index') }}"><span>Cargoe Tag Value</span></a></li>
+                     <li><a href="{{ route('storagelocation.index') }}"><span>Storage Location</span></a></li>
+                     <li><a href="{{ route('agent.index') }}"><span>Agent</span></a></li>
+                     <li><a href="{{ route('customer.index') }}"><span>Customer</span></a></li>
+
+                     <li><a href="{{ route('subscription.index') }}"><span>Subscription</span></a></li>
+                     <li><a href="{{ route('invoice.index') }}"><span>Invoice</span></a></li>
+                     <li><a href="{{ route('invoiceItem.index') }}"><span>Invoice Item</span></a></li>
+                     <li><a href=""><span>Setting </span></a></li>
+                     <li>
+                        <a href="#" id="logout_button">
+                            <span >Log Out</span>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <!-- leftpanelinner -->

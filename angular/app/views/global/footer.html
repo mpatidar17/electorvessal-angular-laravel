@@ -1,0 +1,74 @@
+<script src="/app/assets/js/custom.js"></script>
+<!--chart js-->
+<script src="/app/assets/js/pie-chart.js"></script>
+<script type="text/javascript">
+     $(document).ready(function () {
+        $('#demo-pie-1').pieChart({
+           barColor: '#00aeef',
+           trackColor: '#eee',
+           //lineCap: 'round',
+           lineCap: 'square',
+           lineWidth: 15,
+           rotate: -90,
+           onStep: function (from, to, percent) {
+              $(this.element).find('.pie-value').text('20 / 100' + '\n' + 'CARGOS');
+           }
+        });
+
+        $('#demo-pie-2').pieChart({
+           barColor: '#00aeef',
+           trackColor: '#eee',
+           //lineCap: 'butt',
+           lineCap: 'square',
+           lineWidth: 15,
+           rotate: -90,
+           onStep: function (from, to, percent) {
+              $(this.element).find('.pie-value').text( '5 / 10' + '\n' + 'CARGOS');
+           }
+        });
+
+        $('#demo-pie-3').pieChart({
+           barColor: '#00aeef',
+           trackColor: '#eee',
+           lineCap: 'square',
+           lineWidth: 15,
+           rotate: -90,
+           onStep: function (from, to, percent) {
+              $(this.element).find('.pie-value').text('5 / 10' + '\n' + 'CARGOS');
+           }
+        });
+
+        $('#demo-pie-4').pieChart({
+           barColor: '#00aeef',
+           trackColor: '#eee',
+           lineCap: 'square',
+           lineWidth: 15,
+           rotate: -90,
+           onStep: function (from, to, percent) {
+              $(this.element).find('.pie-value').text('5 / 10' + '\n' + 'USER');
+           }
+        });
+
+        $('#demo-pie-5').pieChart({
+           barColor: '#00aeef',
+           trackColor: '#eee',
+           lineCap: 'square',
+           lineWidth: 15,
+           rotate: -90,
+           onStep: function (from, to, percent) {
+              $(this.element).find('.pie-value').text('250 / 300' + '\n' + 'AGENT');
+           }
+        });
+     });
+</script>
+<script src="/app/bower_components/angular/angular.js"></script>
+<script src="/app/bower_components/angular-route/angular-route.js"></script>
+<script src="/app/app.js"></script>
+<!-- <script src="view1/view1.js"></script>
+<script src="view2/view2.js"></script> -->
+<script src="/app/views/global/routes.js"></script>
+<script src="/app/components/version/version.js"></script>
+<script src="/app/components/version/version-directive.js"></script>
+<script src="/app/components/version/interpolate-filter.js"></script>
+</body>
+</html>

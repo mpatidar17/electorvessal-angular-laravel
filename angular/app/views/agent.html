@@ -1,0 +1,313 @@
+<script>
+if(sessionStorage.getItem("user_login") != "true"){
+   window.location = 'login.html';
+}
+</script>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Electrovessal</title>
+
+    <!-- Styles -->
+    <link href="assets/css/style.default.css" rel="stylesheet">
+   
+
+    <!-- Scripts -->
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/jquery-1.11.1.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/jquery-ui-1.10.3.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.sparkline.min.js"></script>
+    <script src="assets/js/toggles.min.js"></script>
+    <script src="assets/js/jquery.cookies.js"></script>
+    
+</head>
+<body>
+     
+      <section>
+        <div class="leftpanel">
+            <div class="logopanel">
+               <h1>Electrovessel</h1>
+               <img src="assets/images/close-icon.jpg" class="close-icon pull-right menutoggle">
+            </div>
+            <!-- logopanel -->
+            <div class="leftpanelinner">
+               <!-- This is only visible to small devices -->
+               <div class="">
+                  <div class="media userlogged">
+                     <img alt="" src="assets/images/default-logo.png" class="">
+                     <div class="media-body">
+                        <h4>Welcome back <v id="user_firstName"></v></h4>
+                        <span>Last login: 01:12 am 03/25/2017</span>
+                     </div>
+                  </div>
+
+                  <ul class="nav nav-pills nav-stacked nav-bracket mb30">
+                     <li><a href="dashboard.html"><span>Dashboard</span></a></li>
+                     <li><a href="#"><span>Cargo</span></a></li>
+                     <li><a href="#"><span>Cargo Document</span></a></li>
+                     <li><a href="cargo_tag_group.html"><span>Cargo Tag Group</span></a></li>
+                     <li><a href="#"><span>Cargo Text Tag</span></a></li>
+                     <li><a href="#"><span>Cargoe Tag Value</span></a></li>
+                     <li><a href="#"><span>Storage Location</span></a></li>
+                     <li><a href="#"><span>Agent</span></a></li>
+                     <li><a href="#"><span>Customer</span></a></li>
+
+                     <li><a href="#"><span>Subscription</span></a></li>
+                     <li><a href="#"><span>Invoice</span></a></li>
+                     <li><a href="#"><span>Invoice Item</span></a></li>
+                     <li><a href="#"><span>Setting </span></a></li>
+                     <li>
+                        <a href="#" id="logout_button">
+                            <span >Log Out</span>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <!-- leftpanelinner -->
+        </div>
+         <!-- leftpanel -->
+
+         <div class="mainpanel">
+            <div class="headerbar">
+               <a class="menutoggle bar-icon" style="display:none;"><i class="fa fa-bars"></i>
+               Electrovessal</a>
+               <div class="header-right">
+                  <ul class="headermenu">
+                     <li>
+                        <input type="text" class="form-control search-box-top " name="keyword" placeholder="Search here..." />
+                     </li>
+                     <li>
+                        <button id="chatview" class="btn btn-default tp-icon chat-icon">
+                        <i class="glyphicon glyphicon-bell"></i>
+                        </button>
+                     </li>
+                  </ul>
+               </div>
+               <!-- header-right -->
+            </div>
+            <!-- headerbar -->
+
+            <!--content area start-->
+            <div id="content_area">
+                <div class="contentpanel" >
+                      <div class="content-box">
+                        <div class="row">
+                          <div class="col-sm-12 col-md-12">
+                            <div class="contentwrapper">
+                              <div class="top-section">
+                                <a id="add_agent_button" href="{{ route('agent.create') }}" class="btn btn-primary-alt pull-right add-btn"><i class="fa fa-plus"></i>Add Agent</a>
+                              </div>
+                              <div class="content-container">
+                                <h1>Agents </h1>
+                                
+                                <br>
+                                <!--start of the filter container-->
+                                <!--end of the filter container-->
+
+                                <div class="clearfix"></div>
+                                <div class="table-responsive">
+                                  <table class="table table-bordered filter-table table-hover">
+                                    <thead>
+                                      <tr>
+                                        <th>ID &nbsp;&nbsp;<i class="fa fa-caret-down"></i></th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Action</th>
+                                      </tr>
+                                    </thead>
+
+                                    <!--list tbody start-->
+                                    <tbody id="list_tbody">
+                                    </tbody>
+                                    <!--list tbody end  -->
+
+                                  </table>
+                                </div>
+                                <!-- table-responsive --> 
+                                <div class="clearfix"></div>
+                                <div class="row">
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                      <label class="col-sm-4 control-label show-label">Show</label>
+                                      <div class="col-sm-8 clear-box">
+                                        <!-- <input placeholder="Default Input" class="form-control" type="text"> -->
+                                        <select class="form-control show-select">
+                                          <option>20</option>
+                                          <option>50</option>
+                                          <option>100</option>
+                                          <option>200</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-10">
+                                    <ul class="pagination paginate">
+                                      <li class="disabled"><a href="#"><i class="fa fa-caret-left" aria-hidden="true"></i>
+                                        </a>
+                                      </li>
+                                      <li><a href="#">1</a></li>
+                                      <li class="active"><a href="#">2</a></li>
+                                      <li><a href="#">3</a></li>
+                                      <li><a href="#">4</a></li>
+                                      <li><a href="#">5</a></li>
+                                      <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>
+                                        </a>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- col-sm-6 -->
+                        </div>
+                      </div>
+                      <!-- row -->
+                    </div>
+                    <!-- contentpanel -->
+            </div>
+            <!-- contentpanel -->
+            <!--content area end  -->
+
+         </div>
+         <!-- mainpanel -->
+
+
+         <div class="rightpanel">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs nav-justified">
+               <li class="active"><a href="#rp-alluser" data-toggle="tab"><img src="assets/images/close-icon.jpg" class="chat-icon notification_icon" width="20"></a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+               <div class="tab-pane active" id="rp-alluser">
+                  <h5 class="sidebartitle">Online Users</h5>
+                  <ul class="chatuserlist">
+                     <li class="online">
+                        <div class="media">
+                           <a href="#" class="pull-left media-thumb">
+                           <img alt="" src="assets/images/pic.png" class="media-object">
+                           </a>
+                           <div class="media-body">
+                              <strong>Eileen Sideways</strong>
+                              <small>Los Angeles, CA</small>
+                           </div>
+                        </div>
+                        <!-- media -->
+                     </li>
+                     <li class="online">
+                        <div class="media">
+                           <a href="#" class="pull-left media-thumb">
+                           <img alt="" src="assets/images/pic.png" class="media-object">
+                           </a>
+                           <div class="media-body">
+                              <span class="pull-right badge badge-danger">2</span>
+                              <strong>Zaham Sindilmaca</strong>
+                              <small>San Francisco, CA</small>
+                           </div>
+                        </div>
+                        <!-- media -->
+                     </li>
+                     <li class="online">
+                        <div class="media">
+                           <a href="#" class="pull-left media-thumb">
+                           <img alt="" src="assets/images/pic.png" class="media-object">
+                           </a>
+                           <div class="media-body">
+                              <strong>Nusja Nawancali</strong>
+                              <small>Bangkok, Thailand</small>
+                           </div>
+                        </div>
+                        <!-- media -->
+                     </li>
+                     <li class="online">
+                        <div class="media">
+                           <a href="#" class="pull-left media-thumb">
+                           <img alt="" src="assets/images/pic.png" class="media-object">
+                           </a>
+                           <div class="media-body">
+                              <strong>Renov Leongal</strong>
+                              <small>Cebu City, Philippines</small>
+                           </div>
+                        </div>
+                        <!-- media -->
+                     </li>
+                     <li class="online">
+                        <div class="media">
+                           <a href="#" class="pull-left media-thumb">
+                           <img alt="" src="assets/images/pic.png" class="media-object">
+                           </a>
+                           <div class="media-body">
+                              <strong>Weno Carasbong</strong>
+                              <small>Tokyo, Japan</small>
+                           </div>
+                        </div>
+                        <!-- media -->
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <!-- tab-content -->
+         </div>
+         <!-- rightpanel -->
+      </section>
+
+    <script src="assets/js/custom.js"></script>
+    <!--chart js-->
+
+    <script>
+         $(document).ready(function(){
+            var user_id = sessionStorage.getItem("user_id");
+            var company_id = sessionStorage.getItem("company_id");
+            $.ajax({
+                 url:'http://localhost:8000/agent',
+                 type:'GET',
+                 data: 'user_id='+user_id+'&company_id='+company_id,
+                 success:function(data){
+                     //console.log(data);
+                     if(data != '0'){
+                        console.log(data)
+                        var obj = JSON.parse(data);
+
+                        var count = obj.length ;
+                        for( var i=0 ; i <= count ; i++ ){
+                           //list_tbody
+                           var tr = '<tr class="odd"> <td class="center">'+obj[i].id+'</td><td class="center">'+obj[i].firstName+' ' + obj[i].lastName +' </td><td class="center">'+obj[i].email+'</td><td class="center"> <select id="action_button" name="action_button"> <option value="">-Select-</option> <option value="edit">Edit</option> <option value="view">View</option> <option value="delete">Delete</option> </select> </td></tr>';
+                           $('#list_tbody').append(tr);
+                        }//end of the for loop
+
+                     }else{
+                         //$('#error_msg').html('Email or password is not correct!');
+                     }
+                     
+                 },
+                 error: function (data) {
+                     console.log(data);
+                 }
+             });
+         }); 
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+         //user_firstName
+         $("#user_firstName").html(sessionStorage.getItem("user_name"));
+
+         $(document).on('click','#logout_button',function(){
+            sessionStorage.clear();
+            window.location = 'login.html';
+         });
+
+
+
+      })
+    </script>
+</body>
+</html>
+
